@@ -1,0 +1,443 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple: #93328f;
+  --purple-dark: #6e2469;
+  --purple-darker: #4a1847;
+  --purple-deep: #2a0d28;
+  --purple-light: #b44db0;
+  --gold: #c9a227;
+  --gold-light: #e4c060;
+  --gold-dark: #9a7a1c;
+  --dark: #0e0010;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0e0010;
+    color: #ffffff;
+    font-family: var(--font-lato, 'Lato', sans-serif);
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-gold {
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #0e0010;
+    background: var(--gold);
+    padding: 16px 38px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+
+  .btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    background: transparent;
+    padding: 15px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .btn-purple {
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: var(--purple);
+    padding: 16px 36px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-purple:hover {
+    background: var(--purple-dark);
+    transform: translateY(-2px);
+  }
+
+  /* ── Section typography ── */
+  .section-eyebrow {
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .section-h2 {
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 0.92;
+    color: #ffffff;
+  }
+
+  /* ── Dividers ── */
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 40%, var(--purple) 60%, transparent);
+    opacity: 0.45;
+  }
+
+  .divider-purple {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── Purple gradient band ── */
+  .band {
+    background: linear-gradient(135deg, #2a0d28 0%, #6e2469 35%, #93328f 60%, #4a1847 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 90% at 50% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 65%),
+      linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, transparent 55%, rgba(0, 0, 0, 0.30) 100%);
+    pointer-events: none;
+  }
+
+  .band-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  /* ── Hero ── */
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(147, 50, 143, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(147, 50, 143, 0.06) 1px, transparent 1px);
+    background-size: 52px 52px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%);
+  }
+
+  /* ── Leader photo frame ── */
+  .leader-photo-frame {
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(201, 162, 39, 0.25),
+      0 12px 56px rgba(147, 50, 143, 0.45),
+      0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  .leader-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, rgba(14, 0, 16, 0.85) 0%, rgba(14, 0, 16, 0.25) 42%, transparent 68%),
+      rgba(147, 50, 143, 0.18);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .leader-photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(201, 162, 39, 0.38);
+    z-index: 2;
+    pointer-events: none;
+    transition: border-color 0.4s ease, inset 0.4s ease;
+  }
+
+  .leader-photo-frame:hover::after {
+    border-color: rgba(201, 162, 39, 0.72);
+    inset: 10px;
+  }
+
+  .leader-photo-frame img {
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .leader-photo-frame:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ── Series artwork frame ── */
+  .series-artwork-frame {
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(201, 162, 39, 0.2),
+      0 12px 56px rgba(147, 50, 143, 0.4),
+      0 4px 16px rgba(0, 0, 0, 0.55);
+  }
+
+  .series-artwork-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(147, 50, 143, 0.14);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ── Giving photo frame ── */
+  .giving-photo-frame {
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(201, 162, 39, 0.2),
+      0 8px 40px rgba(147, 50, 143, 0.4),
+      0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .giving-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(14, 0, 16, 0.15) 0%, rgba(14, 0, 16, 0.45) 100%),
+      rgba(147, 50, 143, 0.22);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .giving-photo-frame img {
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .giving-photo-frame:hover img {
+    transform: scale(1.04);
+  }
+
+  /* ── Nav dropdown ── */
+  .nav-has-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: rgba(12, 0, 14, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(147, 50, 143, 0.35);
+    border-top: 2px solid var(--gold);
+    min-width: 190px;
+    list-style: none;
+    padding: 6px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(201, 162, 39, 0.08);
+    z-index: 10;
+  }
+
+  .nav-has-dropdown:hover .nav-dropdown,
+  .nav-has-dropdown:focus-within .nav-dropdown {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown li a {
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.15s, background 0.15s, padding-left 0.18s;
+  }
+
+  .nav-dropdown li a::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+  }
+
+  .nav-dropdown li a:hover {
+    color: var(--gold);
+    background: rgba(147, 50, 143, 0.12);
+    padding-left: 24px;
+  }
+
+  .nav-dropdown li a:hover::before {
+    opacity: 1;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── Scroll-to-top button ── */
+  #scroll-top {
+    position: fixed;
+    bottom: 36px;
+    right: 36px;
+    z-index: 300;
+    width: 48px;
+    height: 48px;
+    background: rgba(14, 0, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 162, 39, 0.5);
+    color: var(--gold);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 24px rgba(147, 50, 143, 0.4), 0 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+
+  #scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  #scroll-top:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #0e0010;
+    box-shadow: 0 6px 32px rgba(201, 162, 39, 0.45), 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes orb1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-30px, 40px); }
+}
+
+@keyframes orb2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -30px); }
+}
+
+@keyframes orb3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 20px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Admin panel body override ── */
+.admin-body {
+  background: #f8fafc !important;
+  color: #111827 !important;
+}
