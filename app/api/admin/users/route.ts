@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
       ipAddress: getIpFromRequest(req),
     })
 
-    const loginUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salemeurope.org'}/admin/login`
+    const loginUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salemeurope.org'}/control/login`
     await resend.emails.send({
       from: FROM,
       to: dbUser.email,

@@ -13,11 +13,11 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     const profile = await getUserById(user.id)
 
     if (!profile) {
-      redirect('/admin/signout')
+      redirect('/control/signout')
     }
 
     if (!profile.isActive) {
-      redirect('/admin/signout?error=inactive')
+      redirect('/control/signout?error=inactive')
     }
 
     const role = profile.role as Role

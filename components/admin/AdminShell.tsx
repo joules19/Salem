@@ -28,7 +28,7 @@ function IdleGuard() {
       logoutTimer = setTimeout(async () => {
         const supabase = createClient()
         await supabase.auth.signOut()
-        window.location.assign('/admin/login?error=timeout')
+        window.location.assign('/control/login?error=timeout')
       }, IDLE_MS)
     }
 

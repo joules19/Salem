@@ -21,7 +21,7 @@ export default function Topbar({ name, email, role, roleLabel, onMenuClick }: Pr
     setSigningOut(true)
     const supabase = createClient()
     await supabase.auth.signOut()
-    window.location.assign('/admin/login')
+    window.location.assign('/control/login')
   }
 
   return (

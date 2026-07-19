@@ -15,7 +15,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    href: '/admin/dashboard',
+    href: '/control/dashboard',
     label: 'Dashboard',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4">
@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    href: '/admin/submissions/contact',
+    href: '/control/submissions/contact',
     label: 'Contact',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4">
@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    href: '/admin/submissions/prayers',
+    href: '/control/submissions/prayers',
     label: 'Prayer Requests',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4">
@@ -44,7 +44,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    href: '/admin/submissions/food-bank',
+    href: '/control/submissions/food-bank',
     label: 'Food Bank',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4">
@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    href: '/admin/users',
+    href: '/control/users',
     label: 'Users',
     superAdminOnly: true,
     icon: (
@@ -65,7 +65,7 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    href: '/admin/audit-log',
+    href: '/control/audit-log',
     label: 'Audit Log',
     superAdminOnly: true,
     icon: (

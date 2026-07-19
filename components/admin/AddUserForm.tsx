@@ -65,7 +65,7 @@ export default function AddUserForm({ roles }: { roles: Role[] }) {
         throw new Error(d.error ?? 'Failed to create user')
       }
       toast('User created and welcome email sent', 'success')
-      router.push('/admin/users')
+      router.push('/control/users')
       router.refresh()
     } catch (err) {
       toast(err instanceof Error ? err.message : 'Something went wrong', 'error')

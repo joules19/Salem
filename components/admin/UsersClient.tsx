@@ -89,7 +89,7 @@ export default function UsersClient({ users, currentUserId }: { users: UserRow[]
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                       <Link
-                        href={`/admin/users/${u.id}`}
+                        href={`/control/users/${u.id}`}
                         className="text-[12px] font-medium text-[#93328f] hover:underline no-underline"
                       >
                         Edit

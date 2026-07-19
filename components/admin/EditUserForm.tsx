@@ -46,7 +46,7 @@ export default function EditUserForm({ user, roles }: { user: UserData; roles: R
       if (!res.ok) throw new Error()
       toast('User updated successfully', 'success')
       if (newPassword) toast('Password updated', 'info')
-      router.push('/admin/users')
+      router.push('/control/users')
       router.refresh()
     } catch {
       toast('Failed to update user', 'error')
