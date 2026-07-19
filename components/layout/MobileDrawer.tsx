@@ -14,7 +14,7 @@ const drawerLinks = [
   { label: 'Online', href: '/online' },
   { label: 'Community', href: '/new-to-salem#community' },
   { group: 'Connect' },
-  { label: 'KDF Centers', href: '#kdf' },
+  { label: 'KDF Centers', href: '#' },
   { label: 'Contact us', href: '/contact-us' },
   // { label: 'Give', href: '/give' },
 
@@ -46,11 +46,10 @@ export default function MobileDrawer({ open, onClose }: Props) {
 
   const linkCls = (href: string) => {
     const active = pathname === href || (href !== '/' && pathname.startsWith(href.split('#')[0]))
-    return `font-display text-[12px] font-bold tracking-[2px] uppercase py-4 border-b border-white/[.07] flex items-center justify-between transition-all no-underline ${
-      active
+    return `font-display text-[12px] font-bold tracking-[2px] uppercase py-4 border-b border-white/[.07] flex items-center justify-between transition-all no-underline ${active
         ? 'text-gold pl-1.5 border-l-2 border-l-gold'
         : 'text-white/75 hover:text-gold hover:pl-1.5'
-    }`
+      }`
   }
 
   return (

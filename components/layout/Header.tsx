@@ -33,8 +33,8 @@ export default function Header() {
       <nav
         id="site-nav"
         className={`fixed top-0 left-0 right-0 z-[200] flex items-center justify-between h-[76px] px-[52px] max-md:px-5 backdrop-blur-[20px] transition-all duration-300 ${scrolled
-            ? 'bg-[#0e0010]/[.98] border-b border-[#93328f]/50 shadow-[0_2px_32px_rgba(0,0,0,0.55)]'
-            : 'bg-[#0e0010]/[.92] border-b border-[#93328f]/30'
+          ? 'bg-[#0e0010]/[.98] border-b border-[#93328f]/50 shadow-[0_2px_32px_rgba(0,0,0,0.55)]'
+          : 'bg-[#0e0010]/[.92] border-b border-[#93328f]/30'
           }`}
       >
         {/* Logo */}
@@ -77,7 +77,7 @@ export default function Header() {
           </li>
 
           <li>
-            <a href="#kdf" className={navLink(false)}>KDF Centers</a>
+            <a href="#" className={navLink(false)}>KDF Centers</a>
           </li>
 
           <li>
