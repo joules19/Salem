@@ -66,12 +66,27 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
     setTimeout(resetForm, 400)
   }
 
+  // phone state holds just the local digits after +44 (no leading 0), e.g. "7700 900000"
+  function formatLocalPhone(value: string): string {
+    const d = value.replace(/\D/g, '').slice(0, 10)
+    if (d.startsWith('20') && d.length > 2)
+      return `${d.slice(0, 2)} ${d.slice(2, 6)}${d.length > 6 ? ' ' + d.slice(6) : ''}`.trim()
+    if (d.length > 4) return `${d.slice(0, 4)} ${d.slice(4)}`
+    return d
+  }
+
   function validateUKPhone(value: string): string {
-    const cleaned = value.replace(/[\s\-\(\)]/g, '')
-    const normalised = cleaned.startsWith('+44') ? '0' + cleaned.slice(3) : cleaned
-    if (!normalised) return 'Phone number is required'
-    if (!/^0[1-9]\d{8,9}$/.test(normalised)) return 'Enter a valid UK phone number (e.g. 07700 900000)'
+    const d = value.replace(/\D/g, '')
+    if (!d) return 'Phone number is required'
+    if (d.length < 10) return `Too short — ${10 - d.length} more digit${10 - d.length === 1 ? '' : 's'} needed`
+    if (d.length > 10) return 'Too long — enter 10 digits after +44'
+    if (!/^[1-9]/.test(d)) return 'Not a valid UK number'
     return ''
+  }
+
+  // Full E.164 number sent to the API
+  function fullPhoneNumber(): string {
+    return '+44' + phone.replace(/\D/g, '')
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -92,7 +107,7 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
           parcelSize: parcel,
           parcelSizeOther: parcel === 'other' ? parcelOther : undefined,
           name,
-          phone,
+          phone: fullPhoneNumber(),
           email,
           _honey: honey,
         }),
@@ -111,10 +126,9 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
   const inputCls =
     'w-full bg-transparent border text-white text-[14px] font-light px-4 py-3 outline-none transition-colors placeholder:text-white/30 focus:border-gold/70'
   const radioCls = (selected: boolean) =>
-    `flex items-start gap-3 p-4 cursor-pointer transition-all border ${
-      selected
-        ? 'border-gold/60 bg-gold/8'
-        : 'border-white/[.12] hover:border-white/25 bg-transparent'
+    `flex items-start gap-3 p-4 cursor-pointer transition-all border ${selected
+      ? 'border-gold/60 bg-gold/8'
+      : 'border-white/[.12] hover:border-white/25 bg-transparent'
     }`
 
   return (
@@ -351,18 +365,29 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
                         <label className="block font-display text-[10px] font-bold tracking-[2.5px] uppercase text-gold mb-2">
                           Contact Phone Number <span className="text-red-400 ml-0.5" aria-hidden>*</span>
                         </label>
-                        <input
-                          type="tel"
-                          value={phone}
-                          onChange={(e) => { setPhone(e.target.value); if (phoneError) setPhoneError(validateUKPhone(e.target.value)) }}
-                          onBlur={() => setPhoneError(validateUKPhone(phone))}
-                          placeholder="07700 900000 or +44 7700 900000"
-                          required
-                          maxLength={20}
-                          autoComplete="tel"
-                          className={inputCls}
-                          style={{ borderColor: phoneError ? 'rgba(248,113,113,0.7)' : 'rgba(147,50,143,0.4)' }}
-                        />
+                        <div
+                          className="flex items-stretch"
+                          style={{ border: `1px solid ${phoneError ? 'rgba(248,113,113,0.7)' : 'rgba(147,50,143,0.4)'}` }}
+                        >
+                          {/* UK flag + +44 prefix */}
+                          <div
+                            className="flex items-center gap-2 px-3 shrink-0 select-none"
+                            style={{ borderRight: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}
+                          >
+                            <span className="text-[18px] leading-none" role="img" aria-label="United Kingdom">🇬🇧</span>
+                            <span className="font-display text-[13px] font-semibold text-white/60 tracking-wide">+44</span>
+                          </div>
+                          <input
+                            type="tel"
+                            value={phone}
+                            onChange={(e) => { const v = formatLocalPhone(e.target.value); setPhone(v); if (phoneError) setPhoneError(validateUKPhone(v)) }}
+                            onBlur={() => setPhoneError(validateUKPhone(phone))}
+                            placeholder="7700 900000"
+                            maxLength={12}
+                            autoComplete="tel-national"
+                            className="flex-1 bg-transparent text-white text-[14px] font-light px-4 py-3 outline-none placeholder:text-white/30"
+                          />
+                        </div>
                         {phoneError && (
                           <p className="text-red-400 text-[11px] mt-1.5 font-light">{phoneError}</p>
                         )}
