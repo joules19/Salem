@@ -18,7 +18,7 @@ export default function Header() {
   }, [])
 
   const navLink = (active: boolean) =>
-    `relative font-display text-[11px] font-bold tracking-[1.5px] uppercase px-[13px] py-[10px] block no-underline transition-colors duration-200
+    `relative font-display text-[9px] font-bold tracking-[1.5px] uppercase px-[13px] py-[10px] block no-underline transition-colors duration-200
     after:content-[''] after:absolute after:bottom-1 after:left-[13px] after:right-[13px] after:h-[2px] after:bg-gold after:origin-left after:transition-transform after:duration-200
     ${active ? 'text-white after:scale-x-100' : 'text-white/75 hover:text-white after:scale-x-0 hover:after:scale-x-100'}`
 

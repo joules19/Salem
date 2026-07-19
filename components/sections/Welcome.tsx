@@ -47,7 +47,7 @@ export default function Welcome() {
             <div>
               <div className="leader-photo-frame">
                 <Image
-                  src="/images/third.png"
+                  src="/images/bishop_with_wife.png"
                   alt="Bishop David and Rev. Esther Onimisi, Senior Pastors of Salem Europe"
                   width={600}
                   height={460}
@@ -55,7 +55,7 @@ export default function Welcome() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 {/* Gold corner accents */}
-                {(['tl','tr','bl','br'] as const).map((pos) => (
+                {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
                   <span
                     key={pos}
                     aria-hidden

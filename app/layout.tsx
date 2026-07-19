@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   description:
     'A Pentecostal Assembly on a God-given mandate — baptised into Jesus by one Spirit, united across nations and ethnicities, on mission for the revival of Europe.',
   metadataBase: new URL('https://salemeurope.org'),
+  icons: { icon: '/icon.png', shortcut: '/icon.png', apple: '/icon.png' },
   openGraph: {
     siteName: 'Salem International Christian Centre',
     locale: 'en_GB',

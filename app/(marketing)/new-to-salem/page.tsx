@@ -192,7 +192,7 @@ export default function NewToSalemPage() {
             <div style={{ animation: 'fadeUp 1s ease 0.1s both' }}>
               <div className="leader-photo-frame" style={{ maxWidth: 440 }}>
                 <Image
-                  src="/images/second.png"
+                  src="/images/bishop_with_wife.png"
                   alt="Bishop David Onimisi and Rev. Mrs Esther Onimisi"
                   width={440}
                   height={520}
