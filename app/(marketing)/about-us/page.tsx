@@ -488,12 +488,14 @@ export default function AboutUsPage() {
       >
         {/* Decorative crosses pattern */}
         <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[
-            { top: '8%', left: '5%', size: 60, opacity: 0.06 },
-            { top: '60%', left: '2%', size: 40, opacity: 0.05 },
-            { top: '20%', right: '4%', size: 80, opacity: 0.06 },
-            { top: '75%', right: '6%', size: 50, opacity: 0.05 },
-          ].map((item, i) => (
+          {(
+            [
+              { top: '8%', left: '5%', size: 60, opacity: 0.06 },
+              { top: '60%', left: '2%', size: 40, opacity: 0.05 },
+              { top: '20%', right: '4%', size: 80, opacity: 0.06 },
+              { top: '75%', right: '6%', size: 50, opacity: 0.05 },
+            ] as Array<{ top: string; left?: string; right?: string; size: number; opacity: number }>
+          ).map((item, i) => (
             <svg
               key={i}
               viewBox="0 0 60 60"
@@ -501,7 +503,7 @@ export default function AboutUsPage() {
               stroke="var(--gold)"
               strokeWidth="1"
               className="absolute"
-              style={{ width: item.size, height: item.size, top: item.top, left: (item as any).left, right: (item as any).right, opacity: item.opacity }}
+              style={{ width: item.size, height: item.size, top: item.top, left: item.left, right: item.right, opacity: item.opacity }}
             >
               <line x1="30" y1="0" x2="30" y2="60" />
               <line x1="0" y1="30" x2="60" y2="30" />
@@ -793,10 +795,12 @@ export default function AboutUsPage() {
 
         {/* Geometric art — map pin SVG shapes */}
         <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[
-            { top: '10%', left: '3%', r: 120 },
-            { top: '65%', right: '2%', r: 90 },
-          ].map((c, i) => (
+          {(
+            [
+              { top: '10%', left: '3%', r: 120 },
+              { top: '65%', right: '2%', r: 90 },
+            ] as Array<{ top: string; left?: string; right?: string; r: number }>
+          ).map((c, i) => (
             <svg
               key={i}
               viewBox="0 0 200 200"
@@ -805,8 +809,8 @@ export default function AboutUsPage() {
                 width: c.r * 2,
                 height: c.r * 2,
                 top: c.top,
-                left: (c as any).left,
-                right: (c as any).right,
+                left: c.left,
+                right: c.right,
               }}
               fill="none"
               stroke="var(--gold)"

@@ -14,7 +14,7 @@ export async function createContactSubmission(data: {
 }
 
 export async function getContactSubmissions(opts?: { search?: string; status?: string }) {
-  let q = db.query.contactSubmissions.findMany({
+  const q = db.query.contactSubmissions.findMany({
     orderBy: (c, { desc }) => [desc(c.createdAt)],
   })
   return q

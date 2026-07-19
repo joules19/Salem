@@ -276,7 +276,7 @@ export default function FoodBankPage() {
                 Food Parcel Categories
               </h2>
               <p className="text-[15px] text-white/55 mt-3 max-w-[480px] mx-auto font-light">
-                The church's food bank issues a parcel of dried goods in four categories.
+                The church&apos;s food bank issues a parcel of dried goods in four categories.
               </p>
             </div>
           </RevealWrapper>
