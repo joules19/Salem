@@ -29,6 +29,7 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
   const [parcelOther, setParcelOther] = useState('')
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [phoneError, setPhoneError] = useState('')
   const [email, setEmail] = useState('')
   const [honey, setHoney] = useState('')
 
@@ -54,6 +55,7 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
     setParcelOther('')
     setName('')
     setPhone('')
+    setPhoneError('')
     setEmail('')
     setHoney('')
   }
@@ -64,9 +66,19 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
     setTimeout(resetForm, 400)
   }
 
+  function validateUKPhone(value: string): string {
+    const cleaned = value.replace(/[\s\-\(\)]/g, '')
+    const normalised = cleaned.startsWith('+44') ? '0' + cleaned.slice(3) : cleaned
+    if (!normalised) return 'Phone number is required'
+    if (!/^0[1-9]\d{8,9}$/.test(normalised)) return 'Enter a valid UK phone number (e.g. 07700 900000)'
+    return ''
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (consent !== 'accept') return
+    const phoneErr = validateUKPhone(phone)
+    if (phoneErr) { setPhoneError(phoneErr); return }
     setApiError('')
     setStep('loading')
 
@@ -342,15 +354,18 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
                         <input
                           type="tel"
                           value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder="+44 7700 000000"
+                          onChange={(e) => { setPhone(e.target.value); if (phoneError) setPhoneError(validateUKPhone(e.target.value)) }}
+                          onBlur={() => setPhoneError(validateUKPhone(phone))}
+                          placeholder="07700 900000 or +44 7700 900000"
                           required
-                          minLength={7}
                           maxLength={20}
                           autoComplete="tel"
                           className={inputCls}
-                          style={{ borderColor: 'rgba(147,50,143,0.4)' }}
+                          style={{ borderColor: phoneError ? 'rgba(248,113,113,0.7)' : 'rgba(147,50,143,0.4)' }}
                         />
+                        {phoneError && (
+                          <p className="text-red-400 text-[11px] mt-1.5 font-light">{phoneError}</p>
+                        )}
                       </div>
 
                       <div>
@@ -387,7 +402,7 @@ export default function FoodBankRequestModal({ open, onClose }: Props) {
 
                     <button
                       type="submit"
-                      disabled={!consent || !benefactor || !parcel || !name || !phone || !email}
+                      disabled={!consent || !benefactor || !parcel || !name || !phone || !!phoneError || !email}
                       className="btn-gold w-full disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none"
                     >
                       Place Order →

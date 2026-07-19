@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const drawerLinks = [
   { group: 'Discover' },
@@ -26,6 +27,7 @@ interface Props {
 
 export default function MobileDrawer({ open, onClose }: Props) {
   const closeRef = useRef<HTMLButtonElement>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
     if (!open) return
@@ -42,8 +44,14 @@ export default function MobileDrawer({ open, onClose }: Props) {
     }
   }, [open, onClose])
 
-  const linkCls =
-    'font-display text-[12px] font-bold tracking-[2px] uppercase text-white/75 py-4 border-b border-white/[.07] flex items-center justify-between hover:text-gold hover:pl-1.5 transition-all no-underline'
+  const linkCls = (href: string) => {
+    const active = pathname === href || (href !== '/' && pathname.startsWith(href.split('#')[0]))
+    return `font-display text-[12px] font-bold tracking-[2px] uppercase py-4 border-b border-white/[.07] flex items-center justify-between transition-all no-underline ${
+      active
+        ? 'text-gold pl-1.5 border-l-2 border-l-gold'
+        : 'text-white/75 hover:text-gold hover:pl-1.5'
+    }`
+  }
 
   return (
     <>
@@ -99,7 +107,7 @@ export default function MobileDrawer({ open, onClose }: Props) {
             }
             return (
               <li key={i}>
-                <Link href={item.href} onClick={onClose} className={linkCls}>
+                <Link href={item.href} onClick={onClose} className={linkCls(item.href)}>
                   {item.label}
                   <span className="text-[18px] opacity-35 transition-all group-hover:opacity-100">›</span>
                 </Link>

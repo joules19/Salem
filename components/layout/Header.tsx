@@ -119,12 +119,12 @@ export default function Header() {
 
           <div className="hidden md:block w-px h-[22px] bg-white/[.15] flex-shrink-0" aria-hidden />
 
-          <a
+          <Link
             href="/give"
             className="hidden md:inline font-display text-[10px] font-extrabold tracking-[2.5px] uppercase text-gold border border-gold/55 px-[22px] py-[9px] whitespace-nowrap transition-all hover:bg-gold hover:text-[#0e0010] hover:border-gold hover:shadow-[0_0_20px_rgba(201,162,39,0.35)] no-underline"
           >
             Give
-          </a>
+          </Link>
 
           <button
             className="flex md:hidden flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1 w-9 h-9"

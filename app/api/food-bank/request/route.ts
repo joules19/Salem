@@ -45,9 +45,12 @@ const schema = z.object({
     .regex(/^[\p{L}\s'\-]+$/u, 'Name contains invalid characters'),
   phone: z
     .string()
-    .min(7, 'Enter a valid phone number')
     .max(20)
-    .regex(/^[0-9\s+().–\-]+$/, 'Phone contains invalid characters'),
+    .transform((v) => v.replace(/[\s\-\(\)]/g, ''))
+    .refine((v) => {
+      const normalised = v.startsWith('+44') ? '0' + v.slice(3) : v
+      return /^0[1-9]\d{8,9}$/.test(normalised)
+    }, 'Enter a valid UK phone number (e.g. 07700 900000 or +44 7700 900000)'),
   email: z.string().email('Enter a valid email address').max(200),
   _honey: z.string().optional(),
 })
