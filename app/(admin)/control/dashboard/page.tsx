@@ -5,7 +5,7 @@ import { getContactStats } from '@/lib/db/queries/contact'
 import { getPrayerStats } from '@/lib/db/queries/prayer'
 import { getFoodBankStats } from '@/lib/db/queries/food-bank'
 import { getAllUsers } from '@/lib/db/queries/users'
-import { SkeletonStatCard } from '@/components/control/Skeleton'
+import { SkeletonStatCard } from '@/components/admin/Skeleton'
 import Link from 'next/link'
 
 async function Stats() {
