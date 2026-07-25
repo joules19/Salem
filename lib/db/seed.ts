@@ -20,7 +20,6 @@ async function seed() {
   })
 
   // ── 1. Seed roles ─────────────────────────────────────────────────────────
-  console.log('Seeding roles...')
   const { error: rolesError } = await client.from('roles').upsert(
     [
       { name: 'super_admin', label: 'Super Admin', permissions: { users: true, submissions: true, auditLog: true, settings: true } },
@@ -40,7 +39,6 @@ async function seed() {
   if (roleQueryError || !saRole) { console.error('Could not fetch super_admin role'); process.exit(1) }
 
   // ── 3. Create Supabase Auth user ──────────────────────────────────────────
-  console.log('Creating super admin in Supabase Auth...')
   const { data: authData, error: authError } = await client.auth.admin.createUser({
     email: ADMIN_EMAIL,
     password: ADMIN_PASSWORD,
@@ -58,8 +56,6 @@ async function seed() {
   )
   if (profileError) { console.error('Profile error:', profileError.message); process.exit(1) }
 
-  console.log(`\nDone! Super admin: ${ADMIN_EMAIL} / ${ADMIN_PASSWORD}`)
-  console.log('IMPORTANT: Change this password immediately after first login.')
   process.exit(0)
 }
 
