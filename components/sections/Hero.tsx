@@ -1,20 +1,54 @@
+'use client'
+
 import Link from 'next/dist/client/link'
 import Image from 'next/image'
+import { useRef, useState } from 'react'
+
+const USE_VIDEO = true
+const HERO_VIDEO = '/images/Proactive _and_not_reactivePray.mp4'
+const HERO_IMAGE = '/images/hero.jpg'
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [muted, setMuted] = useState(true)
+
+  function toggleMute() {
+    const video = videoRef.current
+    if (!video) return
+    video.muted = !video.muted
+    setMuted(video.muted)
+  }
+
   return (
     <section className="relative min-h-screen flex items-center pt-[76px] overflow-hidden" aria-label="Welcome to Salem">
 
-      {/* Background image */}
+      {/* Background media */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero.jpg"
-          alt=""
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-        />
+        {USE_VIDEO ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={HERO_IMAGE}
+            aria-hidden
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src={HERO_IMAGE}
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+            aria-hidden
+          />
+        )}
         <div
           className="absolute inset-0"
           style={{
@@ -64,6 +98,32 @@ export default function Hero() {
           animation: 'orb3 7s ease-in-out infinite',
         }}
       />
+
+      {/* Mute toggle — video mode only */}
+      {USE_VIDEO && <button
+        onClick={toggleMute}
+        aria-label={muted ? 'Unmute background video' : 'Mute background video'}
+        className="absolute bottom-8 right-8 z-[2] flex items-center justify-center w-10 h-10 rounded-full transition-colors max-md:bottom-5 max-md:right-5"
+        style={{
+          background: 'rgba(14, 0, 16, 0.55)',
+          border: '1px solid rgba(201, 162, 39, 0.35)',
+          backdropFilter: 'blur(8px)',
+        }}
+      >
+        {muted ? (
+          <svg viewBox="0 0 24 24" className="w-4 h-4 text-gold" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" className="w-4 h-4 text-gold" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg>
+        )}
+      </button>}
 
       {/* Content */}
       <div className="relative z-[2] max-w-[1280px] mx-auto w-full px-[52px] py-[60px] grid grid-cols-[1.1fr_1fr] gap-[80px] items-center max-md:grid-cols-1 max-md:px-6 max-md:text-center max-md:gap-10">
