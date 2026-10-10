@@ -24,7 +24,19 @@ export default function Hero() {
 
       {/* Background media */}
       <div className="absolute inset-0 z-0">
-        {USE_VIDEO ? (
+        {/* Static image — always shown on mobile, fallback on desktop when USE_VIDEO=false */}
+        <Image
+          src={HERO_IMAGE}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={`object-cover object-center ${USE_VIDEO ? 'md:hidden' : ''}`}
+          aria-hidden
+        />
+
+        {/* Video — desktop only, when USE_VIDEO=true */}
+        {USE_VIDEO && (
           <video
             ref={videoRef}
             autoPlay
@@ -34,20 +46,10 @@ export default function Hero() {
             preload="auto"
             poster={HERO_IMAGE}
             aria-hidden
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
           >
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-        ) : (
-          <Image
-            src={HERO_IMAGE}
-            alt=""
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-            aria-hidden
-          />
         )}
         <div
           className="absolute inset-0"
@@ -103,7 +105,7 @@ export default function Hero() {
       {USE_VIDEO && <button
         onClick={toggleMute}
         aria-label={muted ? 'Unmute background video' : 'Mute background video'}
-        className="absolute bottom-8 right-8 z-[2] flex items-center justify-center w-10 h-10 rounded-full transition-colors max-md:bottom-5 max-md:right-5"
+        className="hidden md:flex absolute bottom-8 right-8 z-[2] items-center justify-center w-10 h-10 rounded-full transition-colors"
         style={{
           background: 'rgba(14, 0, 16, 0.55)',
           border: '1px solid rgba(201, 162, 39, 0.35)',
@@ -132,7 +134,7 @@ export default function Hero() {
         <div>
           <div className="font-display text-[11px] font-bold tracking-[4px] uppercase text-gold mb-[22px] flex items-center gap-[14px] animate-fade-up max-md:justify-center">
             <span className="w-9 h-px bg-gold flex-shrink-0 max-md:hidden" aria-hidden />
-            Salem International Christian Centre <span className="text-[18px] font-black leading-none">·</span> Europe
+            Salem International Christian Centre <span className="text-[18px] font-black leading-none align-middle">·</span> Europe
           </div>
 
           <h1
