@@ -13,14 +13,14 @@ export default function Mandate() {
             <div>
               <div className="leader-photo-frame mb-8">
                 <Image
-                  src="/images/second.png"
+                  src="/images/ArchBishop_Sam_and_Wife.jpg"
                   alt="Archbishop Sam Amaga and Bishop Love Sam-Amaga"
                   width={600}
                   height={520}
                   className="w-full object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 45vw"
                 />
-                {(['tl','tr','bl','br'] as const).map((pos) => (
+                {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
                   <span
                     key={pos}
                     aria-hidden

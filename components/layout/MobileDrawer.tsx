@@ -12,9 +12,9 @@ const drawerLinks = [
   { label: 'Events', href: '/events' },
   { label: 'Food Bank', href: '/food-bank' },
   { label: 'Online', href: '/online' },
-  { label: 'Community', href: '/new-to-salem#community' },
+  { label: 'Community', href: '/community' },
   { group: 'Connect' },
-  { label: 'KDF Centers', href: '#' },
+  { label: 'KDF Centers', href: '/kdf' },
   { label: 'Contact us', href: '/contact-us' },
   // { label: 'Give', href: '/give' },
 

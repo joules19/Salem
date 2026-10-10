@@ -77,11 +77,11 @@ export default function Header() {
           </li>
 
           <li>
-            <a href="#" className={navLink(false)}>KDF Centers</a>
+            <Link href="/kdf" className={navLink(pathname === '/kdf')}>KDF Centers</Link>
           </li>
 
           <li>
-            <Link href="/new-to-salem#community" className={navLink(false)}>Community</Link>
+            <Link href="/community" className={navLink(pathname === '/community')}>Community</Link>
           </li>
           {sep}
 
