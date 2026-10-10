@@ -3,7 +3,7 @@ import Hero from '@/components/sections/Hero'
 import Welcome from '@/components/sections/Welcome'
 import Vision from '@/components/sections/Vision'
 import Mandate from '@/components/sections/Mandate'
-import CurrentSeries from '@/components/sections/CurrentSeries'
+// import CurrentSeries from '@/components/sections/CurrentSeries'
 import LatestSermon from '@/components/sections/LatestSermon'
 // import FoodBank from '@/components/sections/FoodBank'
 import StayConnected from '@/components/sections/StayConnected'
@@ -71,7 +71,7 @@ export default function HomePage() {
       <Vision />
       <Divider variant="gold" />
       <Mandate />
-      <CurrentSeries />
+      {/* <CurrentSeries /> */}
       <LatestSermon />
       <Divider variant="purple" />
       {/* <FoodBank /> */}
