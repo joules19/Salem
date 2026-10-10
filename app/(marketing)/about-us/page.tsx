@@ -284,19 +284,19 @@ export default function AboutUsPage() {
           </RevealWrapper>
         </div>
 
-        {/* ── The Founders ── */}
+        {/* ── Archbishop Sam Amaga ── */}
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] pb-[80px] max-md:px-6 max-md:pb-16">
           <RevealWrapper>
             <div className="grid grid-cols-[1fr_1fr] gap-[64px] items-start max-md:grid-cols-1 max-md:gap-10">
 
-              {/* Left — founders photo */}
-              <div className="leader-photo-frame">
+              {/* Left — photo */}
+              <div className="leader-photo-frame" style={{ maxHeight: '540px' }}>
                 <Image
-                  src="/images/ArchBishop_Sam_and_Wife_V1.jpg"
-                  alt="Archbishop Sam Amaga and Bishop Love Sam Amaga, founders of Salem International Christian Centre"
+                  src="/images/ArchBishop_Sam_Amaga.jpg"
+                  alt="Archbishop Sam Amaga, Founder and ArchBishop of Foundation Faith Church Worldwide"
                   width={600}
                   height={720}
-                  className="w-full object-cover object-center"
+                  className="w-full object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
@@ -321,47 +321,94 @@ export default function AboutUsPage() {
                     Archbishop Sam Amaga
                   </div>
                   <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
-                    &amp; Bishop Love Sam-Amaga
+                    Founder &amp; ArchBishop
                   </div>
                 </div>
               </div>
 
-              {/* Right — founder bios stacked */}
-              <div className="flex flex-col gap-10">
-
-                {/* Archbishop Sam Amaga */}
-                <div>
-                  <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
-                    Founder &amp; ArchBishop · Foundation Faith Church Worldwide
-                  </div>
-                  <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
-                    Archbishop Sam Amaga
-                  </h3>
-                  <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
-                    Dr. Sam Amaga is the founder of Salem International Christian Centre (SICC), Abuja, Nigeria, and the presiding ArchBishop of Foundation Faith Church Worldwide. For almost 30 years in ministry, he has brought the undiluted word to his generation — teaching principles from scripture that have shaped the leadership and posterity of the ministry.
-                  </p>
-                  <p className="font-body text-[15px] text-white/75 leading-relaxed">
-                    He received the call into full-time ministry in July 1982, stepping away from a senior role in pharmaceutical management. A graduate of Microbiology, he holds a C.Th. from the Freelandia Institute (1988), a Doctor of Theology from Evangel Christian University of America (1992), and a Doctor of Divinity from the All Nations for Christ Bible Institute (1994).
-                  </p>
+              {/* Right — bio */}
+              <div>
+                <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                  Founder &amp; ArchBishop · Foundation Faith Church Worldwide
                 </div>
+                <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
+                  Archbishop Sam Amaga
+                </h3>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                  Dr. Sam Amaga is the founder of Salem International Christian Centre (SICC), Abuja, Nigeria, and the presiding ArchBishop of Foundation Faith Church Worldwide. For almost 30 years in ministry, he has brought the undiluted word to his generation — teaching principles from scripture that have shaped the leadership and posterity of the ministry.
+                </p>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed">
+                  He received the call into full-time ministry in July 1982, stepping away from a senior role in pharmaceutical management. A graduate of Microbiology, he holds a C.Th. from the Freelandia Institute (1988), a Doctor of Theology from Evangel Christian University of America (1992), and a Doctor of Divinity from the All Nations for Christ Bible Institute (1994).
+                </p>
+              </div>
 
-                {/* Divider between founders */}
-                <div style={{ borderTop: '1px solid rgba(147,50,143,0.35)' }} className="pt-10">
-                  <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+            </div>
+          </RevealWrapper>
+        </div>
+
+        {/* Rule */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        </div>
+
+        {/* ── Bishop Love Sam Amaga ── */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[80px] max-md:px-6 max-md:py-16">
+          <RevealWrapper>
+            <div className="grid grid-cols-[1fr_1fr] gap-[64px] items-start max-md:grid-cols-1 max-md:gap-10">
+
+              {/* Left — bio */}
+              <div className="max-md:order-2">
+                <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                  Co-Founder · Rector, Salem Pastoral &amp; Management College
+                </div>
+                <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
+                  Bishop Love Sam Amaga
+                </h3>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                  Dr. Love Sam Amaga is a world-renowned teacher, conference speaker, and author of many life-changing books. Presently the rector of Salem Pastoral and Management College, she carries a strong mandate for families — holding seminars and conferences on relationships for singles and married couples.
+                </p>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed">
+                  A pioneer of children&apos;s evangelism since 1980, she established children&apos;s Bible clubs and raised a generation of children&apos;s evangelists. She has co-authored over 120 books with Archbishop Sam Amaga and serves as President of the International Council of Female Ministers (ICFM) and of Salem Women Intl Worldwide.
+                </p>
+              </div>
+
+              {/* Right — photo */}
+              <div className="leader-photo-frame max-md:order-1" style={{ maxHeight: '540px' }}>
+                <Image
+                  src="/images/BISHOP_LOVE_SAM_AMAGA.jpg"
+                  alt="Bishop Love Sam Amaga, Co-Founder and Rector of Salem Pastoral and Management College"
+                  width={600}
+                  height={720}
+                  className="w-full object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
+                  <span
+                    key={pos}
+                    aria-hidden
+                    className="absolute z-[3] w-[22px] h-[22px] pointer-events-none"
+                    style={{
+                      top: pos.startsWith('t') ? 10 : undefined,
+                      bottom: pos.startsWith('b') ? 10 : undefined,
+                      left: pos.endsWith('l') ? 10 : undefined,
+                      right: pos.endsWith('r') ? 10 : undefined,
+                      borderTop: pos.startsWith('t') ? '2px solid var(--gold)' : undefined,
+                      borderBottom: pos.startsWith('b') ? '2px solid var(--gold)' : undefined,
+                      borderLeft: pos.endsWith('l') ? '2px solid var(--gold)' : undefined,
+                      borderRight: pos.endsWith('r') ? '2px solid var(--gold)' : undefined,
+                    }}
+                  />
+                ))}
+                <div className="absolute bottom-0 left-0 right-0 z-[3] px-7 pb-[26px] pt-8">
+                  <div className="font-display text-[13px] font-bold tracking-[2px] uppercase text-white mb-[5px]">
+                    Bishop Love Sam Amaga
+                  </div>
+                  <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
                     Co-Founder · Rector, Salem Pastoral &amp; Management College
                   </div>
-                  <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
-                    Bishop Love Sam Amaga
-                  </h3>
-                  <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
-                    Dr. Love Sam Amaga is a world-renowned teacher, conference speaker, and author of many life-changing books. Presently the rector of Salem Pastoral and Management College, she carries a strong mandate for families — holding seminars and conferences on relationships for singles and married couples.
-                  </p>
-                  <p className="font-body text-[15px] text-white/75 leading-relaxed">
-                    A pioneer of children&apos;s evangelism since 1980, she established children&apos;s Bible clubs and raised a generation of children&apos;s evangelists. She has co-authored over 120 books with Archbishop Sam Amaga and serves as President of the International Council of Female Ministers (ICFM) and of Salem Women Intl Worldwide.
-                  </p>
                 </div>
-
               </div>
+
             </div>
           </RevealWrapper>
         </div>
