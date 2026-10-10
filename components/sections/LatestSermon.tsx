@@ -14,24 +14,15 @@ export default function LatestSermon() {
           >
             {/* Video column */}
             <div className="relative" style={{ background: '#111' }}>
-              <div
-                className="w-full flex flex-col items-center justify-center gap-4 relative overflow-hidden"
-                style={{
-                  aspectRatio: '16/9',
-                  background: 'linear-gradient(135deg, #1a0010, #2a0020)',
-                }}
-              >
-                <button
-                  className="w-[72px] h-[72px] rounded-full bg-gold flex items-center justify-center cursor-pointer transition-transform hover:scale-[1.08] hover:bg-gold-light border-none"
-                  aria-label="Play sermon: Your Dominion Mandate Part 3 by Bishop David Onimisi"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-[#0e0010] ml-1">
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                </button>
-                <p className="font-display text-[11px] font-bold tracking-[2px] uppercase text-white/75">
-                  Watch on YouTube &bull; @SalemEurope
-                </p>
+              <div className="w-full" style={{ aspectRatio: '16/9' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/yQmxyMJMQmE"
+                  title="Exceeding Glory (Part 1)"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                  style={{ border: 0, display: 'block' }}
+                />
               </div>
             </div>
 
@@ -41,13 +32,13 @@ export default function LatestSermon() {
               style={{ background: '#140012' }}
             >
               <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-3">
-                Current Series &mdash; Your Dominion Mandate
+                Current Series &mdash; Exceeding Glory
               </div>
               <h2
                 id="sermon-heading"
                 className="font-serif text-[24px] font-bold text-white leading-[1.3] mb-3"
               >
-                Your Dominion Mandate (Part 3)
+                Exceeding Glory (Part 1)
               </h2>
               <div className="font-display text-[11px] font-semibold tracking-[1.5px] uppercase text-salem-light mb-5">
                 Bishop David Onimisi &bull; Salem Europe
@@ -56,7 +47,7 @@ export default function LatestSermon() {
                 Through powerful praise, prophetic worship, and scriptural teachings, explore what it truly means to
                 walk in the authority God intended for His people.
               </p>
-              <a href="https://youtube.com/@SalemEurope" target="_blank" rel="noopener noreferrer" className="btn-purple self-start">
+              <a href="https://www.youtube.com/watch?v=yQmxyMJMQmE" target="_blank" rel="noopener noreferrer" className="btn-purple self-start">
                 Watch Now
               </a>
             </div>

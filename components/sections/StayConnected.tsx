@@ -5,19 +5,18 @@ const socials = [
   {
     name: 'YouTube',
     handle: '@SalemEurope',
-    href: 'https://youtube.com/@SalemEurope',
+    href: 'https://www.youtube.com/channel/UC7B3rQRKN5_4rvhFQoNEiwQ',
     fullWidth: false,
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
-        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42C1 8.14 1 12 1 12s0 3.86.46 5.58a2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95C23 15.86 23 12 23 12s0-3.86-.46-5.58z" />
-        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
       </svg>
     ),
   },
   {
     name: 'Facebook',
     handle: 'Salem Intl Christian Centre London',
-    href: '#',
+    href: 'https://www.facebook.com/Salemeurope',
     fullWidth: false,
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
@@ -28,7 +27,7 @@ const socials = [
   {
     name: 'X (Twitter)',
     handle: '@SalemEurope',
-    href: '#',
+    href: 'https://x.com/salemeurope',
     fullWidth: false,
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
@@ -39,7 +38,7 @@ const socials = [
   {
     name: 'Instagram',
     handle: '@SalemEurope',
-    href: '#',
+    href: 'https://www.instagram.com/salemeurope',
     fullWidth: false,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18" aria-hidden>
@@ -49,17 +48,17 @@ const socials = [
       </svg>
     ),
   },
-  {
-    name: 'TikTok',
-    handle: '@SalemEurope',
-    href: '#',
-    fullWidth: true,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.73z" />
-      </svg>
-    ),
-  },
+  // {
+  //   name: 'TikTok',
+  //   handle: '@SalemEurope',
+  //   href: '#',
+  //   fullWidth: true,
+  //   icon: (
+  //     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
+  //       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.73z" />
+  //     </svg>
+  //   ),
+  // },
 ]
 
 export default function StayConnected() {
@@ -112,41 +111,64 @@ export default function StayConnected() {
               </div>
             </div>
 
-            {/* Right — phone mockups */}
-            <div className="flex justify-center items-end gap-5 max-md:hidden" aria-hidden>
-              {[
-                { label: 'Facebook', detail: 'Salem International\nChristian Centre\nLondon', bg: 'linear-gradient(160deg,#2a0025,var(--purple-darker))' },
-                { label: 'YouTube', detail: 'Salem Europe\nConquest Of Faith · SUBSCRIBE', bg: 'linear-gradient(160deg,#1a0015,#2a0020)' },
-              ].map(({ label, detail, bg }, i) => (
-                <div
-                  key={label}
-                  className="overflow-hidden"
-                  style={{
-                    width: 180,
-                    background: 'rgba(0,0,0,.4)',
-                    border: '2px solid rgba(255,255,255,.2)',
-                    borderRadius: 28,
-                    marginBottom: i === 0 ? 30 : 0,
-                  }}
-                >
-                  <div
-                    className="flex flex-col items-center justify-center gap-2.5 p-5"
-                    style={{ aspectRatio: '9/16', background: bg }}
-                  >
-                    <div
-                      className="w-full text-center"
-                      style={{
-                        background: 'rgba(255,255,255,.06)',
-                        border: '1px dashed rgba(255,255,255,.2)',
-                        borderRadius: 8,
-                        padding: 12,
-                      }}
-                    >
-                      <div className="font-display text-[9px] text-white/50 tracking-[1px] uppercase mb-1.5">{label}</div>
-                      <div className="font-display text-[11px] font-bold text-gold whitespace-pre-line">{detail}</div>
-                    </div>
-                  </div>
+            {/* Right — decorative brand panel */}
+            <div
+              className="relative flex flex-col items-center justify-center text-center overflow-hidden max-md:hidden"
+              style={{
+                minHeight: 420,
+                background: 'linear-gradient(160deg, rgba(0,0,0,0.45) 0%, rgba(42,13,40,0.55) 100%)',
+                border: '1px solid rgba(255,255,255,0.1)',
+              }}
+              aria-hidden
+            >
+              {/* Faint watermark */}
+              <span
+                className="absolute inset-0 flex items-center justify-center font-display font-black text-white uppercase pointer-events-none select-none"
+                style={{ fontSize: 'clamp(60px, 10vw, 120px)', opacity: 0.04, letterSpacing: '0.15em' }}
+              >
+                Salem
+              </span>
+
+              {/* Decorative cross */}
+              <svg
+                viewBox="0 0 120 120"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-gold mb-8"
+                style={{ width: 80, height: 80, opacity: 0.55 }}
+              >
+                <line x1="60" y1="0" x2="60" y2="120" />
+                <line x1="0" y1="60" x2="120" y2="60" />
+                <circle cx="60" cy="60" r="58" />
+                <circle cx="60" cy="60" r="32" />
+              </svg>
+
+              <div className="relative z-[1] px-10">
+                <p className="font-serif text-[19px] italic text-white/85 leading-[1.8] mb-5">
+                  &ldquo;A great people — strong in faith, intimate with the Holy Spirit, empowered by wisdom.&rdquo;
+                </p>
+                <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold">
+                  The Salem Mandate
                 </div>
+              </div>
+
+              {/* Corner accents */}
+              {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
+                <span
+                  key={pos}
+                  className="absolute w-5 h-5 pointer-events-none"
+                  style={{
+                    top: pos.startsWith('t') ? 16 : undefined,
+                    bottom: pos.startsWith('b') ? 16 : undefined,
+                    left: pos.endsWith('l') ? 16 : undefined,
+                    right: pos.endsWith('r') ? 16 : undefined,
+                    borderTop: pos.startsWith('t') ? '1px solid rgba(201,162,39,0.5)' : undefined,
+                    borderBottom: pos.startsWith('b') ? '1px solid rgba(201,162,39,0.5)' : undefined,
+                    borderLeft: pos.endsWith('l') ? '1px solid rgba(201,162,39,0.5)' : undefined,
+                    borderRight: pos.endsWith('r') ? '1px solid rgba(201,162,39,0.5)' : undefined,
+                  }}
+                />
               ))}
             </div>
           </div>

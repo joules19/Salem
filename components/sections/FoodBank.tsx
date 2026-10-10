@@ -30,7 +30,7 @@ export default function FoodBank() {
 
         <div className="flex flex-col gap-3 items-start">
           <Link href="/food-bank" className="btn-gold">Learn More &rarr;</Link>
-          <Link href="#contact" className="btn-ghost" style={{ borderColor: 'rgba(255,255,255,.4)' }}>Volunteer &rarr;</Link>
+          {/* <Link href="#contact" className="btn-ghost" style={{ borderColor: 'rgba(255,255,255,.4)' }}>Volunteer &rarr;</Link> */}
         </div>
       </div>
     </section>

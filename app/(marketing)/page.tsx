@@ -5,7 +5,7 @@ import Vision from '@/components/sections/Vision'
 import Mandate from '@/components/sections/Mandate'
 import CurrentSeries from '@/components/sections/CurrentSeries'
 import LatestSermon from '@/components/sections/LatestSermon'
-import FoodBank from '@/components/sections/FoodBank'
+// import FoodBank from '@/components/sections/FoodBank'
 import StayConnected from '@/components/sections/StayConnected'
 import Give from '@/components/sections/Give'
 import Divider from '@/components/ui/Divider'
@@ -74,7 +74,7 @@ export default function HomePage() {
       <CurrentSeries />
       <LatestSermon />
       <Divider variant="purple" />
-      <FoodBank />
+      {/* <FoodBank /> */}
       <StayConnected />
       <Give />
       <Divider variant="gold" />
