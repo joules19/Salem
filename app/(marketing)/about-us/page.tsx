@@ -270,86 +270,240 @@ export default function AboutUsPage() {
           }}
         />
 
-        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[96px] max-md:px-6 max-md:py-16">
+        {/* Section header */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] pt-[96px] pb-[64px] max-md:px-6 max-md:pt-16 max-md:pb-10">
           <RevealWrapper>
-            <div className="grid grid-cols-[1fr_1fr] gap-[80px] items-center max-md:grid-cols-1 max-md:gap-10">
+            <div className="text-center">
+              <SectionEyebrow className="justify-center mb-4">Leadership</SectionEyebrow>
+              <h2 id="leaders-heading" className="section-h2 mb-5">
+                Our <span className="text-gold">Leaders.</span>
+              </h2>
+              <p className="font-body text-[16px] text-white/70 max-w-xl mx-auto">
+                The shepherds God has placed over Salem — founded in Nigeria and now spanning Europe and beyond.
+              </p>
+            </div>
+          </RevealWrapper>
+        </div>
 
-              {/* Left — text */}
-              <div>
-                <SectionEyebrow className="mb-4">Leadership</SectionEyebrow>
-                <h2 id="leaders-heading" className="section-h2 mb-8">
-                  Our<br /><span className="text-gold">Leaders.</span>
-                </h2>
-                <p className="font-body text-[16px] text-white/75 leading-relaxed mb-8">
-                  Find out more about Archbishop Sam Amaga, Bishop Love Sam Amaga,
-                  Bishop David Onimisi and Rev. Mrs Esther Onimisi — the shepherds
-                  God has placed over Salem Europe.
-                </p>
-                <div className="flex flex-col gap-4">
-                  {[
-                    ['Archbishop Sam Amaga', 'Founder & Senior Pastor'],
-                    ['Bishop Love Sam-Amaga', 'Co-Founder'],
-                    ['Bishop David Onimisi', 'Salem Europe HQ'],
-                    ['Rev. Mrs Esther Onimisi', 'Salem Europe HQ'],
-                  ].map(([name, role]) => (
-                    <div
-                      key={name}
-                      className="flex items-center gap-4 border-b border-white/[.1] pb-4"
-                    >
-                      <div
-                        className="w-2 h-2 rounded-full flex-shrink-0"
-                        style={{ background: 'var(--gold)' }}
-                      />
-                      <div>
-                        <div className="font-display text-[13px] font-bold tracking-[1px] text-white">{name}</div>
-                        <div className="font-body text-[12px] text-white/50 tracking-[0.5px]">{role}</div>
-                      </div>
-                    </div>
-                  ))}
+        {/* ── The Founders ── */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] pb-[80px] max-md:px-6 max-md:pb-16">
+          <RevealWrapper>
+            <div className="grid grid-cols-[1fr_1fr] gap-[64px] items-start max-md:grid-cols-1 max-md:gap-10">
+
+              {/* Left — founders photo */}
+              <div className="leader-photo-frame">
+                <Image
+                  src="/images/ArchBishop_Sam_and_Wife_V1.jpg"
+                  alt="Archbishop Sam Amaga and Bishop Love Sam Amaga, founders of Salem International Christian Centre"
+                  width={600}
+                  height={720}
+                  className="w-full object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
+                  <span
+                    key={pos}
+                    aria-hidden
+                    className="absolute z-[3] w-[22px] h-[22px] pointer-events-none"
+                    style={{
+                      top: pos.startsWith('t') ? 10 : undefined,
+                      bottom: pos.startsWith('b') ? 10 : undefined,
+                      left: pos.endsWith('l') ? 10 : undefined,
+                      right: pos.endsWith('r') ? 10 : undefined,
+                      borderTop: pos.startsWith('t') ? '2px solid var(--gold)' : undefined,
+                      borderBottom: pos.startsWith('b') ? '2px solid var(--gold)' : undefined,
+                      borderLeft: pos.endsWith('l') ? '2px solid var(--gold)' : undefined,
+                      borderRight: pos.endsWith('r') ? '2px solid var(--gold)' : undefined,
+                    }}
+                  />
+                ))}
+                <div className="absolute bottom-0 left-0 right-0 z-[3] px-7 pb-[26px] pt-8">
+                  <div className="font-display text-[13px] font-bold tracking-[2px] uppercase text-white mb-[5px]">
+                    Archbishop Sam Amaga
+                  </div>
+                  <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
+                    &amp; Bishop Love Sam-Amaga
+                  </div>
                 </div>
               </div>
 
-              {/* Right — photo */}
-              <div>
-                <div className="leader-photo-frame">
-                  <Image
-                    src="/images/second.png"
-                    alt="Archbishop Sam Amaga and Bishop Love Sam-Amaga, founders of Salem International Christian Centre"
-                    width={640}
-                    height={560}
-                    className="w-full object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
-                    <span
-                      key={pos}
-                      aria-hidden
-                      className="absolute z-[3] w-[22px] h-[22px] pointer-events-none"
-                      style={{
-                        top: pos.startsWith('t') ? 10 : undefined,
-                        bottom: pos.startsWith('b') ? 10 : undefined,
-                        left: pos.endsWith('l') ? 10 : undefined,
-                        right: pos.endsWith('r') ? 10 : undefined,
-                        borderTop: pos.startsWith('t') ? '2px solid var(--gold)' : undefined,
-                        borderBottom: pos.startsWith('b') ? '2px solid var(--gold)' : undefined,
-                        borderLeft: pos.endsWith('l') ? '2px solid var(--gold)' : undefined,
-                        borderRight: pos.endsWith('r') ? '2px solid var(--gold)' : undefined,
-                      }}
-                    />
-                  ))}
-                  <div className="absolute bottom-0 left-0 right-0 z-[3] px-7 pb-[26px] pt-8">
-                    <div className="font-display text-[13px] font-bold tracking-[2px] uppercase text-white mb-[5px]">
-                      Archbishop Sam Amaga
-                    </div>
-                    <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
-                      &amp; Bishop Love Sam-Amaga
-                    </div>
+              {/* Right — founder bios stacked */}
+              <div className="flex flex-col gap-10">
+
+                {/* Archbishop Sam Amaga */}
+                <div>
+                  <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                    Founder &amp; ArchBishop · Foundation Faith Church Worldwide
                   </div>
+                  <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
+                    Archbishop Sam Amaga
+                  </h3>
+                  <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                    Dr. Sam Amaga is the founder of Salem International Christian Centre (SICC), Abuja, Nigeria, and the presiding ArchBishop of Foundation Faith Church Worldwide. For almost 30 years in ministry, he has brought the undiluted word to his generation — teaching principles from scripture that have shaped the leadership and posterity of the ministry.
+                  </p>
+                  <p className="font-body text-[15px] text-white/75 leading-relaxed">
+                    He received the call into full-time ministry in July 1982, stepping away from a senior role in pharmaceutical management. A graduate of Microbiology, he holds a C.Th. from the Freelandia Institute (1988), a Doctor of Theology from Evangel Christian University of America (1992), and a Doctor of Divinity from the All Nations for Christ Bible Institute (1994).
+                  </p>
                 </div>
+
+                {/* Divider between founders */}
+                <div style={{ borderTop: '1px solid rgba(147,50,143,0.35)' }} className="pt-10">
+                  <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                    Co-Founder · Rector, Salem Pastoral &amp; Management College
+                  </div>
+                  <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
+                    Bishop Love Sam Amaga
+                  </h3>
+                  <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                    Dr. Love Sam Amaga is a world-renowned teacher, conference speaker, and author of many life-changing books. Presently the rector of Salem Pastoral and Management College, she carries a strong mandate for families — holding seminars and conferences on relationships for singles and married couples.
+                  </p>
+                  <p className="font-body text-[15px] text-white/75 leading-relaxed">
+                    A pioneer of children's evangelism since 1980, she established children's Bible clubs and raised a generation of children's evangelists. She has co-authored over 120 books with Archbishop Sam Amaga and serves as President of the International Council of Female Ministers (ICFM) and of Salem Women Intl Worldwide.
+                  </p>
+                </div>
+
               </div>
             </div>
           </RevealWrapper>
         </div>
+
+        {/* Rule */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        </div>
+
+        {/* ── Bishop David Onimisi ── */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[80px] max-md:px-6 max-md:py-16">
+          <RevealWrapper>
+            <div className="grid grid-cols-[1fr_1fr] gap-[64px] items-start max-md:grid-cols-1 max-md:gap-10">
+
+              {/* Left — bio */}
+              <div className="max-md:order-2">
+                <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                  Continental Bishop · Europe &amp; USA
+                </div>
+                <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
+                  Bishop David Onimisi
+                </h3>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                  Bishop David Onimisi is a Mechanical Engineer turned Preacher, formerly the Chief Executive Officer of Davetech International Ltd. He answered God's call and became the Resident Pastor of Salem London on 23rd April 2003 — where through the power of the Holy Spirit, the work has grown and borne extraordinary fruit.
+                </p>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                  Seven branches have been planted across Aberdeen, Edinburgh, Glasgow, Cardiff, Belfast, Plymouth, and South London, alongside the Europe Headquarters in Harlow, Essex. He now serves as Continental Bishop of Salem Operations in Europe and the USA, Chairman of the Salem Europe Governing Council, and Chairman of the Salem College of Bishops.
+                </p>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed">
+                  A forthright teacher of the Word operating in the apostolic anointing, he is also an author and publisher. Two of his books are in print — <em className="text-white/90">Destined for Victories</em> and <em className="text-white/90">Wired for Success</em>.
+                </p>
+              </div>
+
+              {/* Right — photo */}
+              <div className="leader-photo-frame max-md:order-1" style={{ maxHeight: '540px' }}>
+                <Image
+                  src="/images/BISHOP_DAVID_ONIMISI_V1.jpg"
+                  alt="Bishop David Onimisi, Continental Bishop of Salem Operations in Europe and the USA"
+                  width={600}
+                  height={720}
+                  className="w-full object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
+                  <span
+                    key={pos}
+                    aria-hidden
+                    className="absolute z-[3] w-[22px] h-[22px] pointer-events-none"
+                    style={{
+                      top: pos.startsWith('t') ? 10 : undefined,
+                      bottom: pos.startsWith('b') ? 10 : undefined,
+                      left: pos.endsWith('l') ? 10 : undefined,
+                      right: pos.endsWith('r') ? 10 : undefined,
+                      borderTop: pos.startsWith('t') ? '2px solid var(--gold)' : undefined,
+                      borderBottom: pos.startsWith('b') ? '2px solid var(--gold)' : undefined,
+                      borderLeft: pos.endsWith('l') ? '2px solid var(--gold)' : undefined,
+                      borderRight: pos.endsWith('r') ? '2px solid var(--gold)' : undefined,
+                    }}
+                  />
+                ))}
+                <div className="absolute bottom-0 left-0 right-0 z-[3] px-7 pb-[26px] pt-8">
+                  <div className="font-display text-[13px] font-bold tracking-[2px] uppercase text-white mb-[5px]">
+                    Bishop David Onimisi
+                  </div>
+                  <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
+                    Continental Bishop · Europe &amp; USA
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </RevealWrapper>
+        </div>
+
+        {/* Rule */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        </div>
+
+        {/* ── Reverend Esther Onimisi ── */}
+        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[80px] pb-[96px] max-md:px-6 max-md:py-16">
+          <RevealWrapper>
+            <div className="grid grid-cols-[1fr_1fr] gap-[64px] items-start max-md:grid-cols-1 max-md:gap-10">
+
+              {/* Left — photo */}
+              <div className="leader-photo-frame" style={{ maxHeight: '480px' }}>
+                <Image
+                  src="/images/REVEREND_ESTHER_ONIMISI_V3.jpg"
+                  alt="Reverend Esther Onimisi, Diocesan Women's Co-ordinator, Salem Europe"
+                  width={600}
+                  height={600}
+                  className="w-full object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {(['tl', 'tr', 'bl', 'br'] as const).map((pos) => (
+                  <span
+                    key={pos}
+                    aria-hidden
+                    className="absolute z-[3] w-[22px] h-[22px] pointer-events-none"
+                    style={{
+                      top: pos.startsWith('t') ? 10 : undefined,
+                      bottom: pos.startsWith('b') ? 10 : undefined,
+                      left: pos.endsWith('l') ? 10 : undefined,
+                      right: pos.endsWith('r') ? 10 : undefined,
+                      borderTop: pos.startsWith('t') ? '2px solid var(--gold)' : undefined,
+                      borderBottom: pos.startsWith('b') ? '2px solid var(--gold)' : undefined,
+                      borderLeft: pos.endsWith('l') ? '2px solid var(--gold)' : undefined,
+                      borderRight: pos.endsWith('r') ? '2px solid var(--gold)' : undefined,
+                    }}
+                  />
+                ))}
+                <div className="absolute bottom-0 left-0 right-0 z-[3] px-7 pb-[26px] pt-8">
+                  <div className="font-display text-[13px] font-bold tracking-[2px] uppercase text-white mb-[5px]">
+                    Reverend Esther Onimisi
+                  </div>
+                  <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
+                    Diocesan Women&apos;s Co-ordinator
+                  </div>
+                </div>
+              </div>
+
+              {/* Right — bio */}
+              <div>
+                <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                  Diocesan Women&apos;s Co-ordinator · Salem Europe
+                </div>
+                <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
+                  Reverend Esther Onimisi
+                </h3>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
+                  Rev. Esther Onimisi holds a first degree in Geography from the University of Lagos, Nigeria. Her background in customer relations — combined with deep spiritual maturity — has made her a prepared vessel in the hand of the Lord for ministry.
+                </p>
+                <p className="font-body text-[15px] text-white/75 leading-relaxed">
+                  As the wife of the Diocesan Bishop, she serves as the Diocesan Women's Co-ordinator with a passion to see every believer live fully and gloriously for the Lord. Through prayer, visitation, and counselling, she has restored and fired many hearts back to loving God. She is a mother of three — Daniella, David Praise, and Theophilus.
+                </p>
+              </div>
+
+            </div>
+          </RevealWrapper>
+        </div>
+
       </section>
 
       <Divider variant="gold" />
@@ -658,7 +812,7 @@ export default function AboutUsPage() {
                     className="font-display font-black text-white leading-none mb-2"
                     style={{ fontSize: 'clamp(48px, 6vw, 72px)' }}
                   >
-                    40+
+                    40
                   </div>
                   <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-gold">
                     Years of Ministry

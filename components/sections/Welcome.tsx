@@ -47,7 +47,7 @@ export default function Welcome() {
             <div>
               <div className="leader-photo-frame">
                 <Image
-                  src="/images/bishop_with_wife.png"
+                  src="/images/BISHOP_DAVID_ONIMISI_And_Wife.jpg"
                   alt="Bishop David and Rev. Esther Onimisi, Senior Pastors of Salem Europe"
                   width={600}
                   height={460}
@@ -77,7 +77,7 @@ export default function Welcome() {
                     Bishop David &amp; Rev. Esther Onimisi
                   </div>
                   <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
-                    Senior Pastors &middot; Salem Europe
+                    Salem Europe
                   </div>
                 </div>
               </div>
