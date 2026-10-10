@@ -4,7 +4,7 @@ import Link from 'next/dist/client/link'
 import Image from 'next/image'
 import { useRef, useState } from 'react'
 
-const USE_VIDEO = true
+const USE_VIDEO = false
 const HERO_VIDEO = '/images/Proactive _and_not_reactivePray.mp4'
 const HERO_IMAGE = '/images/hero.jpg'
 
@@ -134,7 +134,7 @@ export default function Hero() {
         <div>
           <div className="font-display text-[11px] font-bold tracking-[4px] uppercase text-gold mb-[22px] flex items-center gap-[14px] animate-fade-up max-md:justify-center">
             <span className="w-9 h-px bg-gold flex-shrink-0 max-md:hidden" aria-hidden />
-            Salem International Christian Centre <span className="text-[18px] font-black leading-none align-middle">·</span> Europe
+            <span className="max-md:text-center leading-[1.8]">Salem International Christian Centre <span className="text-[18px] font-black leading-none align-middle">·</span> Europe</span>
           </div>
 
           <h1
