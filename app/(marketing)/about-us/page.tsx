@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import SectionEyebrow from '@/components/ui/SectionEyebrow'
 import RevealWrapper from '@/components/ui/RevealWrapper'
 import Divider from '@/components/ui/Divider'
@@ -358,7 +357,7 @@ export default function AboutUsPage() {
                     Dr. Love Sam Amaga is a world-renowned teacher, conference speaker, and author of many life-changing books. Presently the rector of Salem Pastoral and Management College, she carries a strong mandate for families — holding seminars and conferences on relationships for singles and married couples.
                   </p>
                   <p className="font-body text-[15px] text-white/75 leading-relaxed">
-                    A pioneer of children's evangelism since 1980, she established children's Bible clubs and raised a generation of children's evangelists. She has co-authored over 120 books with Archbishop Sam Amaga and serves as President of the International Council of Female Ministers (ICFM) and of Salem Women Intl Worldwide.
+                    A pioneer of children&apos;s evangelism since 1980, she established children&apos;s Bible clubs and raised a generation of children&apos;s evangelists. She has co-authored over 120 books with Archbishop Sam Amaga and serves as President of the International Council of Female Ministers (ICFM) and of Salem Women Intl Worldwide.
                   </p>
                 </div>
 
@@ -386,7 +385,7 @@ export default function AboutUsPage() {
                   Bishop David Onimisi
                 </h3>
                 <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
-                  Bishop David Onimisi is a Mechanical Engineer turned Preacher, formerly the Chief Executive Officer of Davetech International Ltd. He answered God's call and became the Resident Pastor of Salem London on 23rd April 2003 — where through the power of the Holy Spirit, the work has grown and borne extraordinary fruit.
+                  Bishop David Onimisi is a Mechanical Engineer turned Preacher, formerly the Chief Executive Officer of Davetech International Ltd. He answered God&apos;s call and became the Resident Pastor of Salem London on 23rd April 2003 — where through the power of the Holy Spirit, the work has grown and borne extraordinary fruit.
                 </p>
                 <p className="font-body text-[15px] text-white/75 leading-relaxed mb-4">
                   Seven branches have been planted across Aberdeen, Edinburgh, Glasgow, Cardiff, Belfast, Plymouth, and South London, alongside the Europe Headquarters in Harlow, Essex. He now serves as Continental Bishop of Salem Operations in Europe and the USA, Chairman of the Salem Europe Governing Council, and Chairman of the Salem College of Bishops.
@@ -496,7 +495,7 @@ export default function AboutUsPage() {
                   Rev. Esther Onimisi holds a first degree in Geography from the University of Lagos, Nigeria. Her background in customer relations — combined with deep spiritual maturity — has made her a prepared vessel in the hand of the Lord for ministry.
                 </p>
                 <p className="font-body text-[15px] text-white/75 leading-relaxed">
-                  As the wife of the Diocesan Bishop, she serves as the Diocesan Women's Co-ordinator with a passion to see every believer live fully and gloriously for the Lord. Through prayer, visitation, and counselling, she has restored and fired many hearts back to loving God. She is a mother of three — Daniella, David Praise, and Theophilus.
+                  As the wife of the Diocesan Bishop, she serves as the Diocesan Women&apos;s Co-ordinator with a passion to see every believer live fully and gloriously for the Lord. Through prayer, visitation, and counselling, she has restored and fired many hearts back to loving God. She is a mother of three — Daniella, David Praise, and Theophilus.
                 </p>
               </div>
 
