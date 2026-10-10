@@ -72,6 +72,7 @@ export default function HomePage() {
       <Divider variant="gold" />
       <Mandate />
       {/* <CurrentSeries /> */}
+      <Divider variant="gold" />
       <LatestSermon />
       <Divider variant="purple" />
       {/* <FoodBank /> */}
