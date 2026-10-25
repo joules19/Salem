@@ -152,7 +152,7 @@ export default function ContactUsPage() {
 
           {/* Heading */}
           <div className="text-center mb-16 max-md:mb-12" style={{ animation: 'fadeUp 0.85s ease both' }}>
-            <SectionEyebrow className="justify-center mb-5" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            <SectionEyebrow className="justify-center mb-5 max-md:before:hidden max-md:text-center" style={{ color: 'rgba(255,255,255,0.65)' }}>
               Get in Touch
             </SectionEyebrow>
             <h1
@@ -293,7 +293,7 @@ export default function ContactUsPage() {
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6 py-[96px] max-md:py-16">
           <RevealWrapper>
             <div className="text-center mb-14">
-              <SectionEyebrow className="justify-center mb-4">Direct Message</SectionEyebrow>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center">Direct Message</SectionEyebrow>
               <h2
                 id="form-heading"
                 className="section-h2"
@@ -323,7 +323,7 @@ export default function ContactUsPage() {
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6 pt-[80px] pb-0 max-md:pt-14">
           <RevealWrapper>
             <div className="text-center mb-10">
-              <SectionEyebrow className="justify-center mb-4">Harlow, Essex</SectionEyebrow>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center">Harlow, Essex</SectionEyebrow>
               <h2
                 id="map-heading"
                 className="section-h2"

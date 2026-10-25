@@ -329,7 +329,7 @@ export default function NewToSalemPage() {
         <div id="services" className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[96px] max-md:px-6 max-md:py-16">
           <RevealWrapper>
             <div className="text-center mb-16">
-              <SectionEyebrow className="justify-center mb-4" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Harlow, Essex
               </SectionEyebrow>
               <h2
@@ -447,7 +447,7 @@ export default function NewToSalemPage() {
 
         <div id="community" className="relative z-10 max-w-[1280px] mx-auto px-[52px] max-md:px-6 py-[120px] max-md:py-20 flex flex-col items-center text-center">
           <RevealWrapper>
-            <SectionEyebrow className="justify-center mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <SectionEyebrow className="justify-center mb-6 max-md:before:hidden max-md:text-center" style={{ color: 'rgba(255,255,255,0.6)' }}>
               Get Involved
             </SectionEyebrow>
             <h2
@@ -536,7 +536,7 @@ export default function NewToSalemPage() {
           <RevealWrapper>
             {/* Section header */}
             <div className="text-center mb-16">
-              <SectionEyebrow className="justify-center mb-4">Discipleship</SectionEyebrow>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center">Discipleship</SectionEyebrow>
               <h2
                 id="training-heading"
                 className="section-h2"

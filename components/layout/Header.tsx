@@ -22,7 +22,7 @@ export default function Header() {
     after:content-[''] after:absolute after:bottom-1 after:left-[13px] after:right-[13px] after:h-[2px] after:bg-gold after:origin-left after:transition-transform after:duration-200
     ${active ? 'text-white after:scale-x-100' : 'text-white/75 hover:text-white after:scale-x-0 hover:after:scale-x-100'}`
 
-  const isEvents = pathname === '/events'
+  const isEOC = pathname === '/eoc-26'
 
   const sep = (
     <li className="w-px h-4 bg-white/[.12] mx-1.5 flex-shrink-0 self-center" aria-hidden />
@@ -44,7 +44,8 @@ export default function Header() {
             alt="Salem International Christian Centre"
             width={110}
             height={44}
-            className="h-[44px] w-auto object-contain"
+            className="object-contain"
+            style={{ height: '44px', width: 'auto' }}
             priority
           />
         </Link>
@@ -61,10 +62,21 @@ export default function Header() {
 
           {sep}
 
-          {/* Events — direct link */}
+          {/* EOC '26 — highlighted nav item */}
           <li>
-            <Link href="/events" className={navLink(isEvents)}>Events</Link>
+            <Link
+              href="/eoc-26"
+              className={`relative font-display text-[9px] font-bold tracking-[1.5px] uppercase px-[13px] py-[10px] block no-underline transition-colors duration-200
+                after:content-[''] after:absolute after:bottom-1 after:left-[13px] after:right-[13px] after:h-[2px] after:bg-gold after:origin-left after:transition-transform after:duration-200
+                ${isEOC ? 'text-gold after:scale-x-100' : 'text-gold/80 hover:text-gold after:scale-x-0 hover:after:scale-x-100'}`}
+            >
+              EOC &apos;26
+            </Link>
           </li>
+
+          {/* <li>
+            <Link href="/events" className={navLink(pathname === '/events')}>Events</Link>
+          </li> */}
 
           <li>
             <Link href="/food-bank" className={navLink(pathname === '/food-bank')}>Food Bank</Link>

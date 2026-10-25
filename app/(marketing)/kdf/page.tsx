@@ -81,7 +81,7 @@ export default function KDFPage() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-2xl mx-auto" style={{ animation: 'fadeUp 0.9s ease both' }}>
-          <SectionEyebrow className="justify-center mb-5">Salem International Christian Centre</SectionEyebrow>
+          <SectionEyebrow className="justify-center mb-5 max-md:before:hidden max-md:text-center">Salem International Christian Centre</SectionEyebrow>
 
           <h1
             id="kdf-heading"

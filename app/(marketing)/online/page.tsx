@@ -218,7 +218,7 @@ export default function OnlinePage() {
 
           {/* Heading */}
           <div className="text-center mb-16 max-md:mb-10" style={{ animation: 'fadeUp 0.85s ease both' }}>
-            <SectionEyebrow className="justify-center mb-5">Salem Europe</SectionEyebrow>
+            <SectionEyebrow className="justify-center mb-5 max-md:before:hidden max-md:text-center">Salem Europe</SectionEyebrow>
             <h1
               id="online-heading"
               className="font-display font-black uppercase text-white leading-[0.92] tracking-[-1px]"
@@ -452,7 +452,7 @@ export default function OnlinePage() {
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-[52px] max-md:px-6 py-[100px] max-md:py-16 flex flex-col items-center text-center">
           <RevealWrapper>
-            <SectionEyebrow className="justify-center mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            <SectionEyebrow className="justify-center mb-6 max-md:before:hidden max-md:text-center" style={{ color: 'rgba(255,255,255,0.55)' }}>
               Join the Family
             </SectionEyebrow>
             <h2
@@ -507,7 +507,7 @@ export default function OnlinePage() {
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6 py-[96px] max-md:py-16">
           <RevealWrapper>
             <div className="text-center mb-14">
-              <SectionEyebrow className="justify-center mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 Get Involved
               </SectionEyebrow>
               <h2 id="connect-heading" className="section-h2">
@@ -674,7 +674,7 @@ export default function OnlinePage() {
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6 py-[96px] max-md:py-16">
           <RevealWrapper>
             <div className="text-center mb-14">
-              <SectionEyebrow className="justify-center mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 Follow Us
               </SectionEyebrow>
               <h2 id="social-heading" className="section-h2">

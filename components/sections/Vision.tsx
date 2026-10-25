@@ -27,21 +27,15 @@ export default function Vision() {
                     key={i}
                     className="flex gap-0 items-stretch border-b border-white/[.12] first:border-t first:border-white/[.12]"
                   >
-                    <div className="font-display text-[11px] font-black tracking-[1px] text-gold min-w-[52px] py-[22px] flex-shrink-0 flex items-start">
+                    <div className="font-display text-[13px] font-black tracking-[1px] text-gold min-w-[52px] py-[28px] flex-shrink-0 flex items-start">
                       {String(i + 1).padStart(2, '0')}
                     </div>
-                    <div className="py-[22px] pr-6 text-[15px] font-light text-white/85 leading-[1.65] flex-1">
+                    <div className="py-[28px] pr-6 text-[18px] font-light text-white/85 leading-[1.65] flex-1">
                       {text}
                     </div>
                   </li>
                 ))}
               </ol>
-              <a
-                href="#mandate"
-                className="inline-block mt-8 border-2 border-white/50 px-10 py-[14px] font-display text-[12px] font-bold tracking-[2px] uppercase text-white no-underline transition-all hover:border-white hover:bg-white/[.08]"
-              >
-                Read More
-              </a>
             </div>
 
             {/* Right — service times card */}

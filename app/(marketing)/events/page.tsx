@@ -294,7 +294,7 @@ export default function EventsPage() {
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[96px] max-md:px-6 max-md:py-16">
           <RevealWrapper>
             <div className="text-center mb-14">
-              <SectionEyebrow className="justify-center mb-4" style={{ color: 'var(--gold)' }}>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center" style={{ color: 'var(--gold)' }}>
                 Featured Speakers
               </SectionEyebrow>
               <h2 id="speakers-heading" className="section-h2">
@@ -406,7 +406,7 @@ export default function EventsPage() {
         <div className="max-w-[1280px] mx-auto px-[52px] py-[96px] max-md:px-6 max-md:py-16">
           <RevealWrapper>
             <div className="text-center mb-12">
-              <SectionEyebrow className="justify-center mb-4">Bus Schedule</SectionEyebrow>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center">Bus Schedule</SectionEyebrow>
               <h2 id="bus-heading" className="section-h2">
                 Europe Outpouring<br />
                 <span className="text-gold">Bus Schedule</span>
@@ -571,7 +571,7 @@ export default function EventsPage() {
       >
         <div className="band-pattern" aria-hidden />
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[80px] max-md:px-6 max-md:py-16 text-center">
-          <SectionEyebrow className="justify-center mb-4" style={{ color: 'var(--gold)' }}>
+          <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center" style={{ color: 'var(--gold)' }}>
             Don&apos;t Miss It
           </SectionEyebrow>
           <h2

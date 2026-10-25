@@ -234,7 +234,7 @@ export default function AboutUsPage() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-6" style={{ animation: 'fadeUp 0.9s ease both' }}>
-          <SectionEyebrow className="justify-center mb-5">Salem International Christian Centre</SectionEyebrow>
+          <SectionEyebrow className="justify-center mb-5 max-md:before:hidden max-md:text-center">Salem International Christian Centre</SectionEyebrow>
           <h1
             id="about-heading"
             className="font-display font-black uppercase text-white leading-none tracking-[-1px]"
@@ -273,7 +273,7 @@ export default function AboutUsPage() {
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] pt-[96px] pb-[64px] max-md:px-6 max-md:pt-16 max-md:pb-10">
           <RevealWrapper>
             <div className="text-center">
-              <SectionEyebrow className="justify-center mb-4">Leadership</SectionEyebrow>
+              <SectionEyebrow className="justify-center mb-4 max-md:before:hidden max-md:text-center">Leadership</SectionEyebrow>
               <h2 id="leaders-heading" className="section-h2 mb-5">
                 Our <span className="text-gold">Leaders.</span>
               </h2>
@@ -345,6 +345,130 @@ export default function AboutUsPage() {
             </div>
           </RevealWrapper>
         </div>
+
+        {/* ── OUR STORY ── */}
+        <section aria-labelledby="story-heading" className="relative overflow-hidden">
+          {/* Background art: subtle diagonal lines */}
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(135deg, rgba(147,50,143,0.04) 0px, rgba(147,50,143,0.04) 1px, transparent 1px, transparent 48px)',
+            }}
+          />
+          {/* Orb left */}
+          <div
+            aria-hidden
+            className="absolute left-[-120px] top-[20%] w-[500px] h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(147,50,143,0.12) 0%, transparent 65%)',
+              animation: 'orb2 15s ease-in-out infinite',
+            }}
+          />
+
+          <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[96px] max-md:px-6 max-md:pt-10 max-md:pb-16">
+            <RevealWrapper>
+              <div className="grid grid-cols-[2fr_3fr] gap-[80px] max-md:grid-cols-1 max-md:gap-10">
+
+                {/* Left */}
+                <div className="flex flex-col justify-start">
+                  <SectionEyebrow className="mb-4">Since 1986</SectionEyebrow>
+                  <h2 id="story-heading" className="section-h2 mb-6">
+                    Our<br />Story.
+                  </h2>
+                  {/* Year badge */}
+                  <div
+                    className="relative overflow-hidden mt-4 px-7 py-10 text-center"
+                    style={{
+                      background: 'rgba(147,50,143,0.08)',
+                      border: '1px solid rgba(147,50,143,0.30)',
+                    }}
+                  >
+                    <div
+                      aria-hidden
+                      className="font-display font-black absolute top-0 left-1/2 -translate-x-1/2 leading-none pointer-events-none select-none"
+                      style={{ fontSize: 100, color: 'var(--purple)', opacity: 0.18, top: -10 }}
+                    >
+                      1986
+                    </div>
+                    <div className="relative z-[1]">
+                      <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
+                        Founded
+                      </div>
+                      <div className="font-display text-[36px] font-black text-white leading-none">
+                        7th March
+                      </div>
+                      <div className="font-display text-[14px] font-bold tracking-[2px] text-white/60 mt-1">
+                        1986
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right */}
+                <div>
+                  <div className="mb-8">
+                    <div className="font-display text-[11px] font-bold tracking-[3px] uppercase text-gold mb-5">
+                      The Beginning
+                    </div>
+                    <p className="font-body text-[16px] text-white/80 leading-relaxed mb-5">
+                      It was the 7th of March 1986 that the Lord spoke to His servant
+                      Archbishop Sam Amaga and gave him a mandate to raise an army — a great people who are:
+                    </p>
+                    <ul className="flex flex-col gap-3 mb-6">
+                      {[
+                        'Strong in faith.',
+                        'Empowered by wisdom.',
+                        'Intimate with the Holy Ghost.',
+                        'Doing exploit in life and for God.',
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <span
+                            className="mt-[7px] w-[6px] h-[6px] rounded-full flex-shrink-0"
+                            aria-hidden
+                            style={{ background: 'var(--gold)' }}
+                          />
+                          <span className="font-body text-[15px] text-white/75">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <blockquote
+                    className="font-serif text-[18px] italic font-normal text-white/90 leading-[1.8] border-l-4 border-gold pl-8 max-md:pl-5 mb-6"
+                  >
+                    &ldquo;The Lord said to His servant, Archbishop Sam Amaga on the 15th of March 1986:
+                    &lsquo;I AM sending you to raise me an Army, not one great man, but a great people who are
+                    strong in Faith and cannot be defeated by the devil, in close intimacy with the Holy Spirit,
+                    empowered by wisdom to reign in their spheres of life.&rsquo;&rdquo;
+                  </blockquote>
+
+                  <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-gold">
+                    Archbishop Sam Amaga &amp; Bishop Love Sam-Amaga
+                  </div>
+
+                  {/* Our Mandate */}
+                  <div
+                    className="mt-10 pt-10"
+                    style={{ borderTop: '1px solid rgba(147,50,143,0.30)' }}
+                  >
+                    <div className="font-display text-[11px] font-bold tracking-[3px] uppercase text-gold mb-5">
+                      Our Mandate
+                    </div>
+                    <p className="font-body text-[16px] text-white/80 leading-relaxed">
+                      Thus the mandate to raise people who are change agents in the hand of the Lord was delivered.
+                      Foundation Faith Church, therefore, is the first 10 years of church planting labour that
+                      Archbishop Sam Amaga, his wife and five children and the host of ministers he raised embarked
+                      upon in the city of Port-Harcourt, Nigeria. Since then it has grown into the worldwide ministry
+                      today, known as Salem International Christian Centre.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </RevealWrapper>
+          </div>
+        </section>
 
         {/* Rule */}
         <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] max-md:px-6">
@@ -497,7 +621,7 @@ export default function AboutUsPage() {
               <div className="leader-photo-frame" style={{ maxHeight: '480px' }}>
                 <Image
                   src="/images/REVEREND_ESTHER_ONIMISI_V3.jpg"
-                  alt="Reverend Esther Onimisi, Diocesan Women's Co-ordinator, Salem Europe"
+                  alt="Reverend Esther Onimisi, Continental Women's Co-ordinator, Salem Europe"
                   width={600}
                   height={600}
                   className="w-full object-cover object-top"
@@ -525,7 +649,7 @@ export default function AboutUsPage() {
                     Reverend Esther Onimisi
                   </div>
                   <div className="font-display text-[10px] font-medium tracking-[2.5px] uppercase text-gold">
-                    Diocesan Women&apos;s Co-ordinator
+                    Continental Women&apos;s Co-ordinator
                   </div>
                 </div>
               </div>
@@ -533,7 +657,7 @@ export default function AboutUsPage() {
               {/* Right — bio */}
               <div>
                 <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
-                  Diocesan Women&apos;s Co-ordinator · Salem Europe
+                  Continental Women&apos;s Co-ordinator · Salem Europe
                 </div>
                 <h3 className="font-display text-[24px] font-black text-white mb-5 leading-tight">
                   Reverend Esther Onimisi
@@ -542,7 +666,7 @@ export default function AboutUsPage() {
                   Rev. Esther Onimisi holds a first degree in Geography from the University of Lagos, Nigeria. Her background in customer relations — combined with deep spiritual maturity — has made her a prepared vessel in the hand of the Lord for ministry.
                 </p>
                 <p className="font-body text-[15px] text-white/75 leading-relaxed">
-                  As the wife of the Diocesan Bishop, she serves as the Diocesan Women&apos;s Co-ordinator with a passion to see every believer live fully and gloriously for the Lord. Through prayer, visitation, and counselling, she has restored and fired many hearts back to loving God. She is a mother of three — Daniella, David Praise, and Theophilus.
+                  As the wife of the Continental Bishop, she serves as the Continental Europe Women&apos;s Co-ordinator with a passion to see every believer live fully and gloriously for the Lord. Through prayer, visitation, and counselling, she has restored and fired many hearts back to loving God. She is a mother of three — Daniella, David Praise, and Theophilus.
                 </p>
               </div>
 
@@ -550,132 +674,6 @@ export default function AboutUsPage() {
           </RevealWrapper>
         </div>
 
-      </section>
-
-      <Divider variant="gold" />
-
-      {/* ── OUR STORY ── */}
-      <section aria-labelledby="story-heading" className="relative overflow-hidden">
-        {/* Background art: subtle diagonal lines */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              'repeating-linear-gradient(135deg, rgba(147,50,143,0.04) 0px, rgba(147,50,143,0.04) 1px, transparent 1px, transparent 48px)',
-          }}
-        />
-        {/* Orb left */}
-        <div
-          aria-hidden
-          className="absolute left-[-120px] top-[20%] w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(147,50,143,0.12) 0%, transparent 65%)',
-            animation: 'orb2 15s ease-in-out infinite',
-          }}
-        />
-
-        <div className="relative z-[1] max-w-[1280px] mx-auto px-[52px] py-[96px] max-md:px-6 max-md:py-16">
-          <RevealWrapper>
-            <div className="grid grid-cols-[2fr_3fr] gap-[80px] max-md:grid-cols-1 max-md:gap-10">
-
-              {/* Left */}
-              <div className="flex flex-col justify-start">
-                <SectionEyebrow className="mb-4">Since 1986</SectionEyebrow>
-                <h2 id="story-heading" className="section-h2 mb-6">
-                  Our<br />Story.
-                </h2>
-                {/* Year badge */}
-                <div
-                  className="relative overflow-hidden mt-4 px-7 py-10 text-center"
-                  style={{
-                    background: 'rgba(147,50,143,0.08)',
-                    border: '1px solid rgba(147,50,143,0.30)',
-                  }}
-                >
-                  <div
-                    aria-hidden
-                    className="font-display font-black absolute top-0 left-1/2 -translate-x-1/2 leading-none pointer-events-none select-none"
-                    style={{ fontSize: 100, color: 'var(--purple)', opacity: 0.18, top: -10 }}
-                  >
-                    1986
-                  </div>
-                  <div className="relative z-[1]">
-                    <div className="font-display text-[10px] font-bold tracking-[3px] uppercase text-gold mb-2">
-                      Founded
-                    </div>
-                    <div className="font-display text-[36px] font-black text-white leading-none">
-                      7th March
-                    </div>
-                    <div className="font-display text-[14px] font-bold tracking-[2px] text-white/60 mt-1">
-                      1986
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right */}
-              <div>
-                <div className="mb-8">
-                  <div className="font-display text-[11px] font-bold tracking-[3px] uppercase text-gold mb-5">
-                    The Beginning
-                  </div>
-                  <p className="font-body text-[16px] text-white/80 leading-relaxed mb-5">
-                    It was the 7th of March 1986 that the Lord spoke to His servant
-                    Archbishop Sam Amaga and gave him a mandate to raise an army — a great people who are:
-                  </p>
-                  <ul className="flex flex-col gap-3 mb-6">
-                    {[
-                      'Strong in faith.',
-                      'Empowered by wisdom.',
-                      'Intimate with the Holy Ghost.',
-                      'Doing exploit in life and for God.',
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span
-                          className="mt-[7px] w-[6px] h-[6px] rounded-full flex-shrink-0"
-                          aria-hidden
-                          style={{ background: 'var(--gold)' }}
-                        />
-                        <span className="font-body text-[15px] text-white/75">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <blockquote
-                  className="font-serif text-[18px] italic font-normal text-white/90 leading-[1.8] border-l-4 border-gold pl-8 mb-6"
-                >
-                  &ldquo;The Lord said to His servant, Archbishop Sam Amaga on the 15th of March 1986:
-                  &lsquo;I AM sending you to raise me an Army, not one great man, but a great people who are
-                  strong in Faith and cannot be defeated by the devil, in close intimacy with the Holy Spirit,
-                  empowered by wisdom to reign in their spheres of life.&rsquo;&rdquo;
-                </blockquote>
-
-                <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-gold">
-                  Archbishop Sam Amaga &amp; Bishop Love Sam-Amaga
-                </div>
-
-                {/* Our Mandate */}
-                <div
-                  className="mt-10 pt-10"
-                  style={{ borderTop: '1px solid rgba(147,50,143,0.30)' }}
-                >
-                  <div className="font-display text-[11px] font-bold tracking-[3px] uppercase text-gold mb-5">
-                    Our Mandate
-                  </div>
-                  <p className="font-body text-[16px] text-white/80 leading-relaxed">
-                    Thus the mandate to raise people who are change agents in the hand of the Lord was delivered.
-                    Foundation Faith Church, therefore, is the first 10 years of church planting labour that
-                    Archbishop Sam Amaga, his wife and five children and the host of ministers he raised embarked
-                    upon in the city of Port-Harcourt, Nigeria. Since then it has grown into the worldwide ministry
-                    today, known as Salem International Christian Centre.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </RevealWrapper>
-        </div>
       </section>
 
       <Divider variant="purple" />
@@ -801,7 +799,7 @@ export default function AboutUsPage() {
                 </h2>
 
                 <div
-                  className="mb-8 px-8 py-7"
+                  className="mb-8 px-8 py-7 max-md:px-5 max-md:py-6"
                   style={{
                     background: 'rgba(147,50,143,0.08)',
                     borderLeft: '3px solid var(--gold)',
@@ -846,7 +844,7 @@ export default function AboutUsPage() {
               {/* Right — stat block */}
               <div className="flex flex-col gap-5">
                 <div
-                  className="text-center p-9"
+                  className="text-center p-9 max-md:p-6"
                   style={{
                     background: 'rgba(0,0,0,0.35)',
                     backdropFilter: 'blur(10px)',
@@ -866,7 +864,7 @@ export default function AboutUsPage() {
                 </div>
 
                 <div
-                  className="text-center p-9"
+                  className="text-center p-9 max-md:p-6"
                   style={{
                     background: 'rgba(147,50,143,0.12)',
                     border: '1px solid rgba(147,50,143,0.3)',
@@ -884,7 +882,7 @@ export default function AboutUsPage() {
                 </div>
 
                 <div
-                  className="text-center p-9"
+                  className="text-center p-9 max-md:p-6"
                   style={{
                     background: 'rgba(0,0,0,0.25)',
                     border: '1px solid rgba(255,255,255,0.08)',

@@ -10,7 +10,7 @@ export default function Give() {
         <RevealWrapper>
           <div className="grid grid-cols-2 gap-[80px] items-center max-md:grid-cols-1 max-md:gap-10 max-md:text-center">
             <div>
-              <SectionEyebrow className="mb-4 max-md:justify-center">Give Online</SectionEyebrow>
+              <SectionEyebrow className="mb-4 max-md:justify-center max-md:before:hidden max-md:text-center">Give Online</SectionEyebrow>
               <h2 id="give-heading" className="section-h2 mb-7">
                 Support<br />The <span className="text-gold">Kingdom.</span>
               </h2>
