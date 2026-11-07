@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import eocPoster from '@/public/images/EOC-26-Main.jpeg'
 import SectionEyebrow from '@/components/ui/SectionEyebrow'
 import Divider from '@/components/ui/Divider'
 import RevealWrapper from '@/components/ui/RevealWrapper'
@@ -191,10 +192,9 @@ export default function EOC26Page() {
           {/* Right — poster image */}
           <div className="relative overflow-hidden max-md:order-1 md:max-h-screen">
             <Image
-              src="/images/EOC-26-Main.jpeg"
+              src={eocPoster}
               alt="Europe Outpouring Conference '26 — Archbishop Sam Amaga (Chief Host) and Continental Bishop David Onimisi (Host)"
-              width={1280}
-              height={1600}
+              placeholder="blur"
               priority
               className="w-full h-auto block md:h-full md:object-cover md:object-top"
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -504,7 +504,7 @@ export default function KDFPage() {
           {/* Divider */}
           <div className="my-16 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-          {/* All centres grid */}
+          {/* All centres — grouped by region */}
           <RevealWrapper>
             <div className="text-center mb-10">
               <div className="font-display text-[10px] font-bold tracking-[4px] uppercase text-gold mb-2">
@@ -515,37 +515,79 @@ export default function KDFPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-              {kdfCentres.map(centre => (
-                <div
-                  key={centre.id}
-                  className="kdf-centre-card relative p-5"
-                >
-                  {/* Region badge */}
-                  <div className="font-display text-[8px] font-black tracking-[2.5px] uppercase text-gold/70 mb-2">
-                    {centre.region}
-                  </div>
+            {(() => {
+              const regionOrder = ['Essex', 'East London', 'Harlow', 'Greater London', 'Kent']
+              const grouped = kdfCentres.reduce<Record<string, typeof kdfCentres>>(
+                (acc, c) => { (acc[c.region] ??= []).push(c); return acc },
+                {}
+              )
+              const regionCols: Record<string, string> = {
+                'Essex':         'grid-cols-5 max-xl:grid-cols-3 max-sm:grid-cols-2',
+                'East London':   'grid-cols-1',
+                'Harlow':        'grid-cols-4 max-md:grid-cols-2',
+                'Greater London':'grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1',
+                'Kent':          'grid-cols-1',
+              }
+              return (
+                <div className="flex flex-col gap-10">
+                  {regionOrder.map(region => {
+                    const centres = grouped[region] ?? []
+                    return (
+                      <div key={region}>
+                        {/* Region header */}
+                        <div className="flex items-center gap-4 mb-5">
+                          <span className="font-display text-[10px] font-black tracking-[4px] uppercase text-gold whitespace-nowrap">
+                            {region}
+                          </span>
+                          <div className="flex-1 h-px bg-white/10" aria-hidden />
+                          <span className="font-display text-[11px] font-bold text-white/40 whitespace-nowrap">
+                            {centres.length} {centres.length === 1 ? 'centre' : 'centres'}
+                          </span>
+                        </div>
 
-                  {/* Centre name */}
-                  <div className="font-display text-[16px] font-black uppercase tracking-[1px] text-white mb-3 leading-tight">
-                    {centre.name}
-                  </div>
-
-                  {/* Areas */}
-                  <div className="flex flex-col gap-[5px]">
-                    {centre.areas.map(area => (
-                      <div key={area} className="flex items-center gap-2">
-                        <div
-                          aria-hidden
-                          className="w-[3px] h-[3px] rounded-full bg-gold/40 flex-shrink-0"
-                        />
-                        <span className="font-body text-[12px] text-white/55">{area}</span>
+                        {/* Per-region grid — same col count as centre count so heights always match */}
+                        <div className={`grid gap-3 ${regionCols[region] ?? 'grid-cols-3'}`}>
+                          {centres.map(centre => (
+                            <div
+                              key={centre.id}
+                              className="kdf-centre-card p-5"
+                            >
+                              <div className="font-display text-[15px] font-black uppercase tracking-[0.5px] text-white mb-3 leading-tight">
+                                {centre.name}
+                              </div>
+                              {centre.areas.length > 4 ? (
+                                <div className="flex gap-6 flex-wrap">
+                                  {Array.from(
+                                    { length: Math.ceil(centre.areas.length / 4) },
+                                    (_, i) => centre.areas.slice(i * 4, i * 4 + 4)
+                                  ).map((chunk, i) => (
+                                    <div key={i} className="flex flex-col gap-[6px]">
+                                      {chunk.map(area => (
+                                        <span key={area} className="font-body text-[15px] text-white/75 leading-snug">
+                                          {area}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : (
+                                <div className="flex flex-col gap-[6px]">
+                                  {centre.areas.map(area => (
+                                    <span key={area} className="font-body text-[15px] text-white/75 leading-snug">
+                                      {area}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    )
+                  })}
                 </div>
-              ))}
-            </div>
+              )
+            })()}
           </RevealWrapper>
         </div>
 
